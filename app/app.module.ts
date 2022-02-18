@@ -11,7 +11,7 @@ import {
   MatSidenavModule,
   MatButtonModule,
   MatIconModule,
-  MatCardModule
+  MatCardModule,
 } from '@angular/material';
 
 @NgModule({
@@ -23,10 +23,10 @@ import {
     MatSidenavModule,
     MatButtonModule,
     MatIconModule,
-    MatCardModule
+    MatCardModule,
   ],
   declarations: [AppComponent],
   providers: [MediaMatcher],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}

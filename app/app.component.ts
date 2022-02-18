@@ -1,5 +1,6 @@
 import { Component, ChangeDetectorRef, OnDestroy } from '@angular/core';
 import { MediaMatcher } from '@angular/cdk/layout';
+import { NavItem } from './nav-item';
 
 @Component({
   selector: 'my-app',
@@ -21,4 +22,44 @@ export class AppComponent {
   ngOnDestroy(): void {
     this.mobileQuery.removeListener(this._mobileQueryListener);
   }
+
+  menu: NavItem[] = [
+    {
+      displayName: 'Escritorio',
+      iconName: 'desktop_windows',
+      route: 'escritorio',
+    },
+    {
+      displayName: 'Entradas GADE',
+      iconName: 'ballot',
+      route: 'entradasGADE',
+    },
+    {
+      displayName: 'Expedientes',
+      iconName: 'description',
+      children: [
+        {
+          displayName: 'Mis Expedientes',
+          iconName: 'how_to_reg',
+          route: '/misexpedientes',
+        },
+        {
+          displayName: 'Todos',
+          iconName: 'waves',
+          route: '/todos',
+        },
+      ],
+    },
+    {
+      displayName: 'Perfiles',
+      iconName: 'group',
+      children: [
+        {
+          displayName: 'Búsqueda Perfil',
+          iconName: 'search',
+          route: '/busquedaperfiles',
+        },
+      ],
+    },
+  ];
 }
